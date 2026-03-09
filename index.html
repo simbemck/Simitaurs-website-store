@@ -1,1 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMITAURS - Godot Engine Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo" onclick="showPage('home')">
+                <div class="logo-icon">S</div>
+                <span class="logo-text">SIMITAURS</span>
+            </a>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active" data-page="home" onclick="showPage('home')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    Home
+                </a>
+                <a href="#shop" class="nav-link" data-page="shop" onclick="showPage('shop')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    Shop
+                </a>
+                <a href="#about" class="nav-link" data-page="about" onclick="showPage('about')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    About
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <div class="container">
+            <div class="hero">
+                <div class="hero-icon">🎮</div>
+                <h1 class="hero-title">SIMITAURS</h1>
+                <p class="hero-description">
+                    Experience the ultimate gaming adventure built with Godot Engine. Battle, explore, and conquer in a world of endless possibilities.
+                </p>
+                <a href="#shop" class="btn-primary" onclick="showPage('shop')">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    Visit Shop
+                </a>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon purple">🏆</div>
+                    <h3>Premium Ranks</h3>
+                    <p>Unlock exclusive ranks and show off your status in the game. Each rank comes with unique perks and abilities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon yellow">💰</div>
+                    <h3>Coins</h3>
+                    <p>Purchase in-game coins to buy items, upgrades, and customize your character. Build your empire!</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon cyan">💎</div>
+                    <h3>Gems</h3>
+                    <p>Rare gems unlock special features and premium content. The most valuable currency in SIMITAURS.</p>
+                </div>
+            </div>
+
+            <div class="godot-banner">
+                <div class="banner-icon">⚡</div>
+                <h2>Built with Godot Engine</h2>
+                <p>SIMITAURS leverages the power of Godot Engine to deliver stunning visuals, smooth gameplay, and an immersive experience across all platforms.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shop Page -->
+    <div id="shop" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Shop</h1>
+                <p class="page-subtitle">Enhance your SIMITAURS experience with premium ranks and currency</p>
+            </div>
+
+            <!-- Ranks Section -->
+            <section class="shop-section">
+                <h2 class="section-title">
+                    <span class="section-icon">👑</span>
+                    Premium Ranks
+                </h2>
+                <div class="shop-grid">
+                    <div class="shop-card" data-item="rank-bronze">
+                        <div class="shop-card-icon bronze">🏆</div>
+                        <h3>Bronze Rank</h3>
+                        <p class="price">$4.99</p>
+                        <ul class="features-list">
+                            <li>✓ +10% XP Boost</li>
+                            <li>✓ Bronze Badge</li>
+                            <li>✓ Chat Tag: [Bronze]</li>
+                        </ul>
+                        <button class="btn-shop bronze-btn" onclick="addToCart('rank-bronze', 'Bronze Rank')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="shop-card" data-item="rank-silver">
+                        <div class="shop-card-icon silver">⭐</div>
+                        <h3>Silver Rank</h3>
+                        <p class="price">$9.99</p>
+                        <ul class="features-list">
+                            <li>✓ +25% XP Boost</li>
+                            <li>✓ Silver Badge</li>
+                            <li>✓ Chat Tag: [Silver]</li>
+                            <li>✓ 2x Daily Rewards</li>
+                        </ul>
+                        <button class="btn-shop silver-btn" onclick="addToCart('rank-silver', 'Silver Rank')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="shop-card" data-item="rank-gold">
+                        <div class="shop-card-icon gold">👑</div>
+                        <h3>Gold Rank</h3>
+                        <p class="price">$19.99</p>
+                        <ul class="features-list">
+                            <li>✓ +50% XP Boost</li>
+                            <li>✓ Gold Badge</li>
+                            <li>✓ Chat Tag: [Gold]</li>
+                            <li>✓ 3x Daily Rewards</li>
+                            <li>✓ Exclusive Skins</li>
+                        </ul>
+                        <button class="btn-shop gold-btn" onclick="addToCart('rank-gold', 'Gold Rank')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="shop-card" data-item="rank-diamond">
+                        <div class="shop-card-icon diamond">✨</div>
+                        <h3>Diamond Rank</h3>
+                        <p class="price">$39.99</p>
+                        <ul class="features-list">
+                            <li>✓ +100% XP Boost</li>
+                            <li>✓ Diamond Badge</li>
+                            <li>✓ Chat Tag: [Diamond]</li>
+                            <li>✓ 5x Daily Rewards</li>
+                            <li>✓ All Skins Unlocked</li>
+                            <li>✓ VIP Access</li>
+                        </ul>
+                        <button class="btn-shop diamond-btn" onclick="addToCart('rank-diamond', 'Diamond Rank')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Coins Section -->
+            <section class="shop-section">
+                <h2 class="section-title">
+                    <span class="section-icon">💰</span>
+                    Coin Packages
+                </h2>
+                <div class="shop-grid">
+                    <div class="shop-card" data-item="coins-500">
+                        <div class="shop-card-icon coins">💰</div>
+                        <h3>500 Coins</h3>
+                        <p class="price">$2.99</p>
+                        <button class="btn-shop coins-btn" onclick="addToCart('coins-500', '500 Coins')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="shop-card" data-item="coins-1200">
+                        <div class="shop-card-icon coins">💰</div>
+                        <h3>1,200 Coins</h3>
+                        <p class="bonus">+200 Bonus!</p>
+                        <p class="price">$5.99</p>
+                        <button class="btn-shop coins-btn" onclick="addToCart('coins-1200', '1,200 Coins')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="shop-card" data-item="coins-2500">
+                        <div class="shop-card-icon coins">💰</div>
+                        <h3>2,500 Coins</h3>
+                        <p class="bonus">+500 Bonus!</p>
+                        <p class="price">$9.99</p>
+                        <button class="btn-shop coins-btn" onclick="addToCart('coins-2500', '2,500 Coins')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="shop-card" data-item="coins-6000">
+                        <div class="shop-card-icon coins">💰</div>
+                        <h3>6,000 Coins</h3>
+                        <p class="bonus">+1,500 Bonus!</p>
+                        <p class="price">$19.99</p>
+                        <button class="btn-shop coins-btn" onclick="addToCart('coins-6000', '6,000 Coins')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gems Section -->
+            <section class="shop-section">
+                <h2 class="section-title">
+                    <span class="section-icon">💎</span>
+                    Gem Packages
+                </h2>
+                <div class="shop-grid">
+                    <div class="shop-card" data-item="gems-100">
+                        <div class="shop-card-icon gems">💎</div>
+                        <h3>100 Gems</h3>
+                        <p class="price">$4.99</p>
+                        <button class="btn-shop gems-btn" onclick="addToCart('gems-100', '100 Gems')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="shop-card" data-item="gems-250">
+                        <div class="shop-card-icon gems">💎</div>
+                        <h3>250 Gems</h3>
+                        <p class="bonus">+50 Bonus!</p>
+                        <p class="price">$9.99</p>
+                        <button class="btn-shop gems-btn" onclick="addToCart('gems-250', '250 Gems')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="shop-card" data-item="gems-600">
+                        <div class="shop-card-icon gems">💎</div>
+                        <h3>600 Gems</h3>
+                        <p class="bonus">+150 Bonus!</p>
+                        <p class="price">$19.99</p>
+                        <button class="btn-shop gems-btn" onclick="addToCart('gems-600', '600 Gems')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="shop-card" data-item="gems-1500">
+                        <div class="shop-card-icon gems">💎</div>
+                        <h3>1,500 Gems</h3>
+                        <p class="bonus">+500 Bonus!</p>
+                        <p class="price">$39.99</p>
+                        <button class="btn-shop gems-btn" onclick="addToCart('gems-1500', '1,500 Gems')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">About SIMITAURS</h1>
+                <p class="page-subtitle">Built with passion using Godot Engine</p>
+            </div>
+
+            <div class="about-main">
+                <div class="about-icon">🎮</div>
+                <h2>The SIMITAURS Experience</h2>
+                <p>SIMITAURS is an epic multiplayer adventure game that combines stunning visuals, fast-paced gameplay, and a vibrant community. Built entirely using Godot Engine, our game delivers a seamless experience across all platforms.</p>
+                <p>Dive into a world filled with challenging quests, powerful enemies, and endless customization options. Whether you're a casual player or a competitive gamer, SIMITAURS offers something for everyone.</p>
+            </div>
+
+            <div class="about-features">
+                <div class="about-card">
+                    <div class="about-card-icon blue">💻</div>
+                    <h3>Powered by Godot</h3>
+                    <p>We chose Godot Engine for its flexibility, performance, and open-source nature. This allows us to create a game that runs smoothly on any device while maintaining the highest quality graphics and gameplay.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-card-icon purple">👥</div>
+                    <h3>Community First</h3>
+                    <p>Our community is at the heart of everything we do. We listen to player feedback, host regular events, and continuously update the game with new content based on what our players want.</p>
+                </div>
+            </div>
+
+            <div class="tech-features">
+                <div class="tech-icon">⚡</div>
+                <h2>Technical Features</h2>
+                <ul class="tech-list">
+                    <li><span>▸</span> Cross-platform support (Windows, Mac, Linux, Mobile)</li>
+                    <li><span>▸</span> Real-time multiplayer with low latency</li>
+                    <li><span>▸</span> Advanced GDScript optimization</li>
+                    <li><span>▸</span> Custom shaders and particle effects</li>
+                    <li><span>▸</span> Dynamic lighting and shadows</li>
+                    <li><span>▸</span> Procedural world generation</li>
+                    <li><span>▸</span> Built-in anti-cheat system</li>
+                    <li><span>▸</span> Regular content updates via Godot's export system</li>
+                </ul>
+            </div>
+
+            <div class="version-info">
+                <p>SIMITAURS v1.0.0 | Built with Godot Engine 4.x | GDScript & C#</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 SIMITAURS. Powered by Godot Engine.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Badge -->
+    <div id="cart-badge" class="cart-badge" style="display: none;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span id="cart-count">0</span> items in cart
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
